@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //components
 import Aux from '../../hoc/Aux/Aux';
-import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import Header from '../../components/Navigation/Header/Header';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer'
 //css
 import classes from './Layout.css';
@@ -31,7 +31,7 @@ class Layout extends Component {
     render() {
         return (
             <Aux>
-                <Toolbar 
+                <Header 
                     drawerToggleClicked={this.sideDrawerToggleHandler}
                     isAuth={this.props.isAuthenticated }
                     />
