@@ -2,13 +2,14 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
-//! CSS
-import classes from './App.css';
 //! Components
 import Main from './containers/Main/Main'
 import Layout from './hoc/Layout/layout'
 import Logout from './containers/Auth/Logout/Logout'
 import asyncComponent from './hoc/asyncComponent/asyncComponent'
+import Music from './components/Music/Music';
+import Booking from './components/Booking/Booking';
+import Coding from './components/Coding/Coding';
 //! Actions
 import * as actions from './store/actions/index';
 
@@ -16,7 +17,6 @@ import * as actions from './store/actions/index';
 const asyncAuth = asyncComponent( () => {
   return import ('./containers/Auth/Auth')
 })
-
 
 //! ─── MAIN ───────────────────────────────────────────────────────────────────────
 
@@ -33,6 +33,9 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={asyncAuth}/>
         <Route path="/" exact component={Main}/>
+        <Route path="/coding"  component={Coding}/>
+        <Route path="/music"  component={Booking}/>
+        <Route path="/booking"  component={Music}/>
         {/* if none of these routes are found, ie if user tries to go to a route he/she doesn't have access to, they are redirected to the root page */}
         <Redirect to="/"/>
       </Switch>
@@ -44,6 +47,9 @@ class App extends Component {
         <Switch>
           <Route path="/logout" component={Logout}/>
           <Route path="/auth" component={asyncAuth}/>
+          <Route path="/coding"  component={Coding}/>
+          <Route path="/music"  component={Booking}/>
+          <Route path="/booking"  component={Music}/>
           <Route path="/" exact component={Main}/>
           <Redirect to="/"/>
         </Switch>
@@ -51,7 +57,7 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
+      <div>
         <Layout>
           {routes}
         </Layout>

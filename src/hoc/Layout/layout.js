@@ -1,20 +1,19 @@
-//dependencies
+//!dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//components
+//!components
 import Aux from '../../hoc/Aux/Aux';
 import Header from '../../components/Navigation/Header/Header';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer'
-//css
+//!css
 import classes from './Layout.css';
 
 
 //this container will connect to the redux store in order to pass authentication info to Toolbar and Sidedrawer, which will render login/logout links depending on auth status.
 class Layout extends Component {
     state = {
-        showSideDrawer: true
+        showSideDrawer: false
     }
-
 
     sideDrawerClosedHandler = () => {
         this.setState({
