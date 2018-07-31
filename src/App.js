@@ -32,10 +32,10 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/auth" component={asyncAuth}/>
+        <Route path="/coding" component={Coding}/>
+        <Route path="/music" component={Music}/>
+        <Route path="/booking" component={Booking}/>
         <Route path="/" exact component={Main}/>
-        <Route path="/coding"  component={Coding}/>
-        <Route path="/music"  component={Booking}/>
-        <Route path="/booking"  component={Music}/>
         {/* if none of these routes are found, ie if user tries to go to a route he/she doesn't have access to, they are redirected to the root page */}
         <Redirect to="/"/>
       </Switch>
@@ -47,9 +47,9 @@ class App extends Component {
         <Switch>
           <Route path="/logout" component={Logout}/>
           <Route path="/auth" component={asyncAuth}/>
-          <Route path="/coding"  component={Coding}/>
-          <Route path="/music"  component={Booking}/>
-          <Route path="/booking"  component={Music}/>
+          <Route path="/coding" component={Coding}/>
+          <Route path="/music" component={Music}/>
+          <Route path="/booking" component={Booking}/>
           <Route path="/" exact component={Main}/>
           <Redirect to="/"/>
         </Switch>

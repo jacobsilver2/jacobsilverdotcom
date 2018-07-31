@@ -12,7 +12,7 @@ import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = (props) => (
     <ul className={classes.NavigationItems}>
-        <NavigationItem link="/">Jacob Silver</NavigationItem>        
+        <NavigationItem link="/">JACOB SILVER</NavigationItem>        
         {/* only show the orders link if User is authenticated */}
         { props.isAuthenticated ? <NavigationItem link="/addShow">Add Show</NavigationItem> : null } 
         {/* //if user is NOT authenticated, then show LOGIN, otherwise show LOGOUT */}
@@ -21,7 +21,7 @@ const navigationItems = (props) => (
         : <NavigationItem link="/logout">LOGOUT</NavigationItem> 
         }  
         <NavigationItem link="/music">MUSIC</NavigationItem> 
-        <NavigationItem link="/code">CODE</NavigationItem> 
+        <NavigationItem link="/coding">CODE</NavigationItem> 
         <NavigationItem link="/booking">BOOKING</NavigationItem> 
     </ul>
 )

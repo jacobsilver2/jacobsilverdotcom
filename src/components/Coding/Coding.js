@@ -1,7 +1,8 @@
 import React from 'react';
+import Content from '../../containers/Content/Content'
 
 const Coding = () => (
-  <h1>Coding Page</h1>
+  <Content />
 );
 
 export default Coding;
