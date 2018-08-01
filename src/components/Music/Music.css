@@ -1,0 +1,40 @@
+.Container {
+  display: grid;
+  /* grid-gap: 1px; */
+  grid-template-columns: 4fr 1fr;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Left {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color:  whitesmoke; /* best colour */
+}
+
+.Right {
+    /* We center the contents of these items. You can also do this with flexbox too! */
+    display: grid;
+    
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
+    font-size: 35px;
+    background-color:  whitesmoke; /* best colour */
+}
+
+.Link {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
+    font-size: 35px;
+    background-color:  cornflowerblue; /* best colour */
+}

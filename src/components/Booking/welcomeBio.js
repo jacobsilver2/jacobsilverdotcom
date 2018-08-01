@@ -1,0 +1,1 @@
+export const welcomeBio = 'This is the booking page placeholder text'
