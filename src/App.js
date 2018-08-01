@@ -10,7 +10,6 @@ import asyncComponent from './hoc/asyncComponent/asyncComponent'
 import Music from './components/Music/Music';
 import Booking from './components/Booking/Booking';
 import Coding from './components/Coding/Coding';
-import Resume from './components/Coding/CodingResume/CodingResume';
 //! Actions
 import * as actions from './store/actions/index';
 

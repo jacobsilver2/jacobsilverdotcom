@@ -4,28 +4,28 @@ import CodingResume from '../Coding/CodingResume/CodingResume';
 import CodingProjects from '../Coding/CodingProjects/CodingProjects';
 import Button from '../UI/Button/Button';
 import classes from './Coding.css';
+import { welcome } from './welcomeConstant';
 
 class Coding extends Component {
-  state = {clicked: false, buttonClicked: ''}
+  state = {buttonClicked: ''}
 
   resumeClicked = () => {
-    this.setState({clicked: true, buttonClicked:'resume'});
+    this.setState({buttonClicked:'resume'});
   }
 
   projectsClicked = () => {
-    this.setState({clicked: false, buttonClicked: 'projects'})
+    this.setState({buttonClicked: 'projects'})
   }
 
 
   render() {
     let content = null;
-
     if (this.state.buttonClicked === 'resume') {
       content = <CodingResume />
     } else if (this.state.buttonClicked === 'projects') {
       content = <CodingProjects />
     } else {
-      content = "Welcome to the coding page"
+      content = welcome
     }
 
 
