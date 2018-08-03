@@ -20,9 +20,10 @@ const navigationItems = (props) => (
         ? <NavigationItem link="/auth">LOGIN</NavigationItem> 
         : <NavigationItem link="/logout">LOGOUT</NavigationItem> 
         }  
-        <NavigationItem link="/music">MUSIC</NavigationItem> 
         <NavigationItem link="/coding">CODE</NavigationItem> 
+        <NavigationItem link="/music">MUSIC</NavigationItem> 
         <NavigationItem link="/booking">BOOKING</NavigationItem> 
+        <NavigationItem link="/addshow">ADD SHOW</NavigationItem> 
     </ul>
 )
 

@@ -15,7 +15,10 @@
   border-radius: 3px;
   font-size: 35px;
   background-color:  whitesmoke; /* best colour */
+  overflow-y: scroll;
 }
+
+
 
 .Right {
     /* We center the contents of these items. You can also do this with flexbox too! */
@@ -28,6 +31,8 @@
     font-size: 35px;
     background-color:  whitesmoke; /* best colour */
 }
+
+
 
 .Link {
     display: grid;

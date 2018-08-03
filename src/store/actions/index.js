@@ -12,3 +12,7 @@ export {
 export {
   fetchPineShows
 } from './pine'
+
+export {
+  addShow
+} from './musicGigs'

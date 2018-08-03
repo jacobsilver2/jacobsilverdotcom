@@ -41,14 +41,14 @@ class Booking extends Component {
 
     return (
       <div className={classes.Container}>
-      <div className={classes.Left}>
-        {content}
+        <div className={classes.Left}>
+          {content}
+        </div>
+        <div className={classes.Right}>
+          <Button clicked={this.petesClicked}>Pete's Candy Store Calendar</Button>
+          <Button clicked={this.pineBoxClicked}>Pine Box Rock Shop Calendar</Button>
+        </div>
       </div>
-      <div className={classes.Right}>
-        <Button clicked={this.petesClicked}>Pete's Candy Store Calendar</Button>
-        <Button clicked={this.pineBoxClicked}>Pine Box Rock Shop Calendar</Button>
-      </div>
-    </div>
     );
   }
 }

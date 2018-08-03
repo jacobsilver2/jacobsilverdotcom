@@ -41,7 +41,7 @@ export const fetchPineShows = () => {
         //   });
         // }
         res.data.map(show => {
-          fetchedShows.push({...show})
+          return fetchedShows.push({...show})
         })
       dispatch(getPineShowsSuccess(fetchedShows))
       })

@@ -5,7 +5,7 @@ import axios from 'axios';
 //action types
 import * as actionTypes from './actionTypes';
 //URL constants
-import { PETESURL, PINEBOXURL } from './rootURLs';
+import { PETESURL } from './rootURLs';
 
 export const getPetesShowsStart = () => {
   return {
@@ -41,7 +41,7 @@ export const fetchPetesShows = () => {
         //   });
         // }
         res.data.map(show => {
-          fetchedShows.push({...show})
+          return fetchedShows.push({...show})
         })
       dispatch(getPetesShowsSuccess(fetchedShows))
       })

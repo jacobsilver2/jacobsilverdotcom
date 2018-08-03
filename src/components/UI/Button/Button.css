@@ -10,6 +10,10 @@
   /* font-weight: bold; */
 }
 
+.Button:hover {
+  background-color: grey;;
+}
+
 .Button:disabled {
   color: #ccc;
   cursor: not-allowed;

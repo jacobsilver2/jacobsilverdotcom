@@ -32,7 +32,9 @@ class Coding extends Component {
     return (
       <div className={classes.Container}>
       <div className={classes.Left}>
+        <div className={classes.Welcome}>
         {content}
+        </div>
       </div>
       <div className={classes.Right}>
         <Button clicked={this.resumeClicked}>Resume</Button>
