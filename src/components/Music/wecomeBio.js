@@ -1,1 +1,0 @@
-export const welcomeBio = "This is the welcome bio"

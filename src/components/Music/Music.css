@@ -39,3 +39,8 @@
     font-size: 35px;
     background-color:  cornflowerblue; /* best colour */
 }
+
+.Bio {
+  font-weight: 300;
+  font-size: large;
+}

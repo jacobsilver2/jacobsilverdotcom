@@ -20,10 +20,6 @@ const removeShow = (state, action) => {
 
 }
 
-const getShows = (state, action) => {
-
-}
-
 const editShow = (state, action) => {
 
 }
@@ -34,10 +30,12 @@ const reducer = (state=initialState, action) => {
     case actionTypes.ADD_SHOW_START: return updateObject(state, {loading:true});
     case actionTypes.ADD_SHOW_SUCCESS: return addShowSuccess(state, action);
     case actionTypes.ADD_SHOW_FAIL: return updateObject(state, {loading:false});
+
     case actionTypes.REMOVE_SHOW: return removeShow(state, action);
+
     case actionTypes.GET_SHOWS_START: return updateObject(state, {loading: true});
     //! Unsure about this
-    case actionTypes.GET_SHOWS_SUCCESS: return updateObject(state, {showDetails: action.showDetails, loading: false});
+    case actionTypes.GET_SHOWS_SUCCESS: return updateObject(state, {shows: action.shows, loading: false});
     case actionTypes.GET_SHOWS_FAIL: return updateObject(state, {loading: false});
     case actionTypes.EDIT_SHOW: return editShow(state, action);
     default: return state;

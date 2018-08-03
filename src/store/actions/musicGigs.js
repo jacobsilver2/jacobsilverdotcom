@@ -22,13 +22,33 @@ export const addShowFail = (error) => {
   }
 }
 
+export const getShowsStart = () => {
+  return {
+    type: actionTypes.GET_SHOWS_START
+  }
+}
+
+export const getShowsSuccess = (shows) => {
+  return {
+    type: actionTypes.GET_SHOWS_SUCCESS,
+    shows: shows
+  }
+}
+
+export const getShowsFail = (error) => {
+  return {
+    type: actionTypes.GET_SHOWS_FAIL,
+    error: error
+  }
+}
+
+
 //async actions
 export const addShow = (showdata) => {
   return dispatch => {
     dispatch(addShowStart())
     axios.post('/shows.json', showdata)
     .then(response => {
-      console.log(response)
       dispatch(addShowSuccess(response.data.act, showdata))
     })
     .catch(error => {
@@ -37,6 +57,22 @@ export const addShow = (showdata) => {
   }
 }
 
-// axios.post('/shows.json', show)
-// .then(res => console.log(res))
-// .catch(err => console.log(err))
+export const getShows = () => {
+  return dispatch => {
+    dispatch(getShowsStart());
+    axios.get('/shows.json')
+    .then(res => {
+      const fetchedShows = [];
+      for (let key in res.data) {
+        fetchedShows.push({
+          ...res.data[key],
+          id: key
+        });
+      }
+      dispatch(getShowsSuccess(fetchedShows))
+    })
+    .catch(err => {
+      dispatch(getShowsFail(err))
+    })
+  }
+}

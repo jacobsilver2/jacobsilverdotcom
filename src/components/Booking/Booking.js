@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 //! components
-import { welcomeBio } from './welcomeBio';
+import { bookingBio1, bookingBio2, bookingBio3, bookingBio4, bookingBio5 } from './welcomeBio';
 import Button from '../UI/Button/Button';
 import BookingCalendar from './bookingCalendar';
 //! css
@@ -35,7 +35,7 @@ class Booking extends Component {
       case 'pine':
         content = <BookingCalendar events={this.props.pineboxEvents} loading={this.props.loading}/>
         break;
-      default: content = welcomeBio;
+      default: content = (<div className={classes.Bio}><p>{bookingBio1}</p><p>{bookingBio2}</p><p>{bookingBio3}</p><p>{bookingBio4}</p><p>{bookingBio5}</p></div>);
     }
 
 

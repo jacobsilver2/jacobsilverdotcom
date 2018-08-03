@@ -14,5 +14,6 @@ export {
 } from './pine'
 
 export {
-  addShow
+  addShow,
+  getShows
 } from './musicGigs'
