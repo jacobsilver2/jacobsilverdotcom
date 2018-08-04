@@ -5,9 +5,9 @@ import classes from './NavigationItems.css';
 //! Component Imports
 import NavigationItem from './NavigationItem/NavigationItem';
 
-//!receives isAuthenticated via props.  Receives from Toolbar and Sidedrawer
+//!receives isAuthenticated via props.  Receives from Header and Sidedrawer
 
-//!depending on truthiness of isAuthenticated, either the LOGIN or LOGOUT routewill render
+//!depending on truthiness of isAuthenticated, either the LOGIN or LOGOUT route will render
 
 
 const navigationItems = (props) => (
@@ -24,6 +24,7 @@ const navigationItems = (props) => (
         <NavigationItem link="/music">MUSIC</NavigationItem> 
         <NavigationItem link="/booking">BOOKING</NavigationItem> 
         <NavigationItem link="/blog">BLOG</NavigationItem> 
+        <NavigationItem link="/newpost">NEW BLOG POST</NavigationItem> 
         <NavigationItem link="/addshow">ADD SHOW</NavigationItem> 
     </ul>
 )

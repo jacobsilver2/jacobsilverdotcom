@@ -17,3 +17,8 @@ export {
   addShow,
   getShows
 } from './musicGigs'
+
+export {
+  addPost,
+  getPosts
+} from './blog'

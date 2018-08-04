@@ -20,3 +20,12 @@ export const EDIT_SHOW = 'EDIT_SHOW'
 export const GET_SHOWS_START = 'GET_SHOWS_START';
 export const GET_SHOWS_SUCCESS = 'GET_SHOWS_SUCCESS';
 export const GET_SHOWS_FAIL = 'GET_SHOWS_FAIL';
+
+export const ADD_POST_START = 'ADD_POST_START';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+export const ADD_POST_FAIL = 'ADD_POST_FAIL';
+export const REMOVE_POST = 'REMOVE_POST';
+export const EDIT_POST = 'EDIT_POST';
+export const GET_POSTS_START = 'GET_POSTS_START';
+export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
+export const GET_POSTS_FAIL = 'GET_POSTS_FAIL';

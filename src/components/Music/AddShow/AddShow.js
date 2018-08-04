@@ -117,6 +117,10 @@ class AddShow extends Component {
     this.setState({added: true})
   }
 
+  onShowCancel = () => {
+    this.props.history.goBack()
+  }
+
   render() {
 
     const addedRedirect = this.state.added ? <Redirect to="/"/> : null
@@ -147,6 +151,7 @@ class AddShow extends Component {
         {addedRedirect}
         <form onSubmit={this.submitHandler}>
           {form}
+          <Button clicked={this.onShowCancel}  btnType="Danger">CANCEL</Button>
           <Button btnType="Success">SUBMIT</Button>
         </form>
       </div>

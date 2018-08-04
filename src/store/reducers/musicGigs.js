@@ -34,7 +34,6 @@ const reducer = (state=initialState, action) => {
     case actionTypes.REMOVE_SHOW: return removeShow(state, action);
 
     case actionTypes.GET_SHOWS_START: return updateObject(state, {loading: true});
-    //! Unsure about this
     case actionTypes.GET_SHOWS_SUCCESS: return updateObject(state, {shows: action.shows, loading: false});
     case actionTypes.GET_SHOWS_FAIL: return updateObject(state, {loading: false});
     case actionTypes.EDIT_SHOW: return editShow(state, action);
