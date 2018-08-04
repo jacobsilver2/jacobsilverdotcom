@@ -11,6 +11,7 @@ import Music from './components/Music/Music';
 import Booking from './components/Booking/Booking';
 import Coding from './components/Coding/Coding';
 import AddShow from './components/Music/AddShow/AddShow';
+import Blog from './components/Blog/Blog';
 //! Actions
 import * as actions from './store/actions/index';
 
@@ -37,6 +38,7 @@ class App extends Component {
         <Route path="/music" component={Music}/>
         <Route path="/booking" component={Booking}/>
         <Route path="/addshow" component={AddShow}/>
+        <Route path="/blog" component={Blog}/>
         <Route path="/" exact component={Main}/>
         {/* if none of these routes are found, ie if user tries to go to a route he/she doesn't have access to, they are redirected to the root page */}
         <Redirect to="/"/>

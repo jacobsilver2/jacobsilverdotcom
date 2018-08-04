@@ -23,6 +23,7 @@ const navigationItems = (props) => (
         <NavigationItem link="/coding">CODE</NavigationItem> 
         <NavigationItem link="/music">MUSIC</NavigationItem> 
         <NavigationItem link="/booking">BOOKING</NavigationItem> 
+        <NavigationItem link="/blog">BLOG</NavigationItem> 
         <NavigationItem link="/addshow">ADD SHOW</NavigationItem> 
     </ul>
 )
