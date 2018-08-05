@@ -11,11 +11,19 @@ class Blog extends Component {
     this.props.onFetchPosts();
   }
 
+  handlePostEdit = (id) => {
+    console.log(`Edit was called with an id of ${id}`)
+  }
+
+  handlePostDelete = (id) => {
+    this.props.onDeletePost(id);
+    this.props.history.replace('/blog')
+  }
+
   render() {
-    console.log(this.props)
     let posts = <Spinner />
     if (!this.props.loading) {
-      posts = this.props.posts.map(post => <Post key={post.id} title={post.title} content={post.content}/>)
+      posts = this.props.posts.map(post => <Post key={post.id} edit={this.handlePostEdit} destroy={this.handlePostDelete} id={post.id} title={post.title} content={post.content}/>)
     }
     return (
       <div className={classes.Container}>
@@ -34,7 +42,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onFetchPosts: () => dispatch(actions.getPosts())
+    onFetchPosts: () => dispatch(actions.getPosts()),
+    onDeletePost: (id) => dispatch(actions.deletePost(id))
   }
 }
 

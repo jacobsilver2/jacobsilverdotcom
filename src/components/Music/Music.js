@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import classes from './Music.css';
 import Button from '../UI/Button/Button';
-import MusicBio from './Biography/musicBiography';
 import MusicGigs from './Gigs/musicGigs';
 import MusicDiscography from './Discography/musicDiscography';
 import MusicBiography from './Biography/musicBiography'
-import Spinner from '../../components/UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
 
 class Music extends Component {

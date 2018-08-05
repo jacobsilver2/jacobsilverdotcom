@@ -66,7 +66,6 @@ class NewPost extends Component {
   }
   
   render() {
-    console.log(this.props)
     const addedRedirect = this.state.added ? <Redirect to="/blog"/> : null
 
     const formElementsArray = [];

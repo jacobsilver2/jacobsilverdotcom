@@ -9,15 +9,11 @@ const initialState = {
 }
 
 const addPostSuccess = (state, action) => {
-  const newPost = updateObject(action.postData, {id: action.postId})
+  const newPost = updateObject(action.postData, {id: action.id})
   return updateObject(state, {
     loading: false,
-    posts: state.shows.concat(newPost)
+    posts: state.posts.concat(newPost)
   })
-}
-
-const removePost = (state, action) => {
-
 }
 
 const editPost = (state, action) => {
@@ -30,7 +26,7 @@ const reducer = (state=initialState, action) => {
     case actionTypes.ADD_POST_SUCCESS: return addPostSuccess(state, action)
     case actionTypes.ADD_POST_FAIL: return updateObject(state, {loading: false})
 
-    case actionTypes.REMOVE_POST: return removePost(state, action);
+    case actionTypes.REMOVE_POST: return {posts: state.posts.filter(post => post.id !== action.postId)};
 
     case actionTypes.GET_POSTS_START: return updateObject(state, {loading: true})
     case actionTypes.GET_POSTS_SUCCESS: return updateObject(state, {posts: action.posts, loading: false})

@@ -11,7 +11,7 @@ export const addPostSuccess = (id, postData) => {
   return {
     type: actionTypes.ADD_POST_SUCCESS,
     id: id,
-    postdata: postData
+    postData: postData
   }
 }
 
@@ -42,6 +42,13 @@ export const getPostsFail = (error) => {
   }
 }
 
+export const removePost = (postId) => {
+  return {
+    type: 'REMOVE_POST',
+    postId: postId
+  }
+}
+
 //async
 
 export const addPost = (postData) => {
@@ -49,10 +56,11 @@ export const addPost = (postData) => {
     dispatch(addPostStart());
     axios.post('/blog.json', postData)
     .then(response => {
-      dispatch(addPostSuccess(response.data.title), postData)
+      console.log(`The ID is ${response.data.name}. The data is ${postData}`)
+      dispatch(addPostSuccess(response.data.name, postData))
     })
     .catch(error => {
-      dispatch(addPostFail())
+      dispatch(addPostFail(error))
     })
   }
 }
@@ -73,6 +81,18 @@ export const getPosts = () => {
     })
     .catch(err => {
       dispatch(getPostsFail(err))
+    })
+  }
+}
+
+export const deletePost = (postId) => {
+  return dispatch => {
+    axios.delete(`/blog/${postId}.json`)
+    .then(res => {
+      dispatch(removePost(postId))
+    })
+    .catch(err => {
+      console.log(err)
     })
   }
 }
