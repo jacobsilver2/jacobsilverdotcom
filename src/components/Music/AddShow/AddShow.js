@@ -123,7 +123,7 @@ class AddShow extends Component {
 
   render() {
 
-    const addedRedirect = this.state.added ? <Redirect to="/"/> : null
+    const addedRedirect = this.state.added ? <Redirect to="/music"/> : null
 
     const formElementsArray = [];
     for (let key in this.state.controls) {

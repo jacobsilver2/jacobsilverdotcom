@@ -11,7 +11,7 @@ export const addShowSuccess = (id, showdata) => {
   return {
     type: actionTypes.ADD_SHOW_SUCCESS,
     id: id,
-    showdata: showdata
+    showData: showdata
   }
 }
 
@@ -42,14 +42,20 @@ export const getShowsFail = (error) => {
   }
 }
 
+export const removeShow = (showId) => {
+  return {
+    type: actionTypes.REMOVE_SHOW,
+    showId: showId
+  }
+}
 
 //async actions
 export const addShow = (showdata) => {
   return dispatch => {
-    dispatch(addShowStart())
+    dispatch(addShowStart());
     axios.post('/shows.json', showdata)
     .then(response => {
-      dispatch(addShowSuccess(response.data.act, showdata))
+      dispatch(addShowSuccess(response.data.name, showdata))
     })
     .catch(error => {
       dispatch(addShowFail(error))
@@ -73,6 +79,18 @@ export const getShows = () => {
     })
     .catch(err => {
       dispatch(getShowsFail(err))
+    })
+  }
+}
+
+export const deleteShow = (showId) => {
+  return dispatch => {
+    axios.delete(`/shows/${showId}.json`)
+    .then(res => {
+      dispatch(removeShow(showId))
+    })
+    .catch(err => {
+      console.log(err)
     })
   }
 }

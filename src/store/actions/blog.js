@@ -56,7 +56,6 @@ export const addPost = (postData) => {
     dispatch(addPostStart());
     axios.post('/blog.json', postData)
     .then(response => {
-      console.log(`The ID is ${response.data.name}. The data is ${postData}`)
       dispatch(addPostSuccess(response.data.name, postData))
     })
     .catch(error => {
