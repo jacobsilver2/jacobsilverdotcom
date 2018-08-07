@@ -49,7 +49,18 @@ export const removePost = (postId) => {
   }
 }
 
-//async
+export const updatePost = (id, post) => {
+  return {
+    type: actionTypes.EDIT_POST,
+    post: post,
+    postId: id
+  }
+}
+
+//! ────────────────────────────────────────────────────────────────── I ──────────
+//!   :::::: A S Y N C   A C T I O N S : :  :   :    :     :        :          :
+//! ────────────────────────────────────────────────────────────────────────────
+
 
 export const addPost = (postData) => {
   return dispatch => {
@@ -92,6 +103,19 @@ export const deletePost = (postId) => {
     })
     .catch(err => {
       console.log(err)
+    })
+  }
+}
+
+export const editPost = (id, postData) => {
+  return dispatch => {
+    axios.patch(`/blog/${id}.json`, postData)
+    .then(res => {
+      console.log("Response from edit post action.  The response is " + res)
+      dispatch(updatePost(id, postData));
+    })
+    .catch(error => {
+      console.log(error)
     })
   }
 }

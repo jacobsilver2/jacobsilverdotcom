@@ -22,5 +22,6 @@ export {
 export {
   addPost,
   getPosts,
-  deletePost
+  deletePost,
+  editPost
 } from './blog'

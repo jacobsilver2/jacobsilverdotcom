@@ -6,13 +6,10 @@ import * as actions from '../../store/actions/index';
 import Post from './Post/post'
 
 class Blog extends Component {
-  
+  state = {isEditing: false, editId: null}
+
   componentDidMount() {
     this.props.onFetchPosts();
-  }
-
-  handlePostEdit = (id) => {
-    console.log(`Edit was called with an id of ${id}`)
   }
 
   handlePostDelete = (id) => {
@@ -23,8 +20,9 @@ class Blog extends Component {
   render() {
     let posts = <Spinner />
     if (!this.props.loading) {
-      posts = this.props.posts.map(post => <Post key={post.id} edit={this.handlePostEdit} destroy={this.handlePostDelete} id={post.id} title={post.title} content={post.content}/>)
+      posts = this.props.posts.map(post => <Post key={post.id} destroy={this.handlePostDelete} id={post.id} title={post.title} content={post.content}/>)
     }
+
     return (
       <div className={classes.Container}>
         {posts}
@@ -43,7 +41,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onFetchPosts: () => dispatch(actions.getPosts()),
-    onDeletePost: (id) => dispatch(actions.deletePost(id))
+    onDeletePost: (id) => dispatch(actions.deletePost(id)),
   }
 }
 

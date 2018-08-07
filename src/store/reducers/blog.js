@@ -17,7 +17,11 @@ const addPostSuccess = (state, action) => {
 }
 
 const editPost = (state, action) => {
-
+  console.log(`editPost reducer.  The actions are ${action.post.content}, ${action.post.title} and ${action.postId}`)
+  const postIndex = state.posts.findIndex(post => post.id === action.postId)
+  let posts = [...state.posts]
+  posts[postIndex] = {...posts[postIndex], content:action.post.content, title: action.post.title}
+  return {...state, posts}
 }
 
 const reducer = (state=initialState, action) => {
