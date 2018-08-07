@@ -1,9 +1,18 @@
 import React from 'react';
 import MusicGig from './MusicGig/musicGig'
 
-const musicGigs = ({shows, onEdit, onDelete}) => {
+const musicGigs = ({shows, onDelete}) => {
   const gigs = shows.map(show => {
-    return <MusicGig onEdit={onEdit} onDelete={onDelete} key={show.id} act={show.act} date={show.date} time={show.time} city={show.city} website={show.website} venue={show.venue} id={show.id}/>
+    return <MusicGig 
+      onDelete={onDelete} 
+      key={show.id} 
+      act={show.act} 
+      date={show.date} 
+      time={show.time} 
+      city={show.city} 
+      website={show.website} 
+      venue={show.venue} 
+      id={show.id}/>
   })
   
   return (

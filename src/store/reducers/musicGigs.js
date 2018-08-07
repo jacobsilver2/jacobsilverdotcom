@@ -18,7 +18,17 @@ const addShowSuccess = (state, action) => {
 
 
 const editShow = (state, action) => {
-
+  const showIndex = state.shows.findIndex(show => show.id === action.showId);
+  let shows = [...state.shows]
+  shows[showIndex] = {...shows[showIndex], 
+    act: action.show.act,
+    city: action.show.city,
+    date: action.show.date,
+    time: action.show.time,
+    venue: action.show.venue,
+    website: action.show.website,
+  }
+  return {...state, shows}
 }
 
 
@@ -33,6 +43,7 @@ const reducer = (state=initialState, action) => {
     case actionTypes.GET_SHOWS_START: return updateObject(state, {loading: true});
     case actionTypes.GET_SHOWS_SUCCESS: return updateObject(state, {shows: action.shows, loading: false});
     case actionTypes.GET_SHOWS_FAIL: return updateObject(state, {loading: false});
+
     case actionTypes.EDIT_SHOW: return editShow(state, action);
     default: return state;
   }

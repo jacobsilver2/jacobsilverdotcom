@@ -16,7 +16,8 @@ export {
 export {
   addShow,
   getShows,
-  deleteShow
+  deleteShow,
+  editShow
 } from './musicGigs'
 
 export {

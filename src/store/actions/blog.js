@@ -111,7 +111,6 @@ export const editPost = (id, postData) => {
   return dispatch => {
     axios.patch(`/blog/${id}.json`, postData)
     .then(res => {
-      console.log("Response from edit post action.  The response is " + res)
       dispatch(updatePost(id, postData));
     })
     .catch(error => {

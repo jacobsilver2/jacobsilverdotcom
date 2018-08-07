@@ -49,7 +49,18 @@ export const removeShow = (showId) => {
   }
 }
 
-//async actions
+export const updateShow = (id, show) => {
+  return {
+    type: actionTypes.EDIT_SHOW,
+    show: show,
+    showId: id
+  }
+}
+
+//! ────────────────────────────────────────────────────────────────── I ──────────
+//!   :::::: A S Y N C   A C T I O N S : :  :   :    :     :        :          :
+//! ────────────────────────────────────────────────────────────────────────────
+
 export const addShow = (showdata) => {
   return dispatch => {
     dispatch(addShowStart());
@@ -91,6 +102,18 @@ export const deleteShow = (showId) => {
     })
     .catch(err => {
       console.log(err)
+    })
+  }
+}
+
+export const editShow = (id, showData) => {
+  return dispatch => {
+    axios.patch(`/shows/${id}.json`, showData)
+    .then(res => {
+      dispatch(updateShow(id, showData));
+    })
+    .catch(error => {
+      console.log(error)
     })
   }
 }

@@ -30,16 +30,12 @@ class Music extends Component {
     this.props.onDeleteShow(id)
     this.props.history.replace('/music')
   }
-
-  handleGigEdit = (id) => {
-    console.log(`you clicked edit.  Id is ${id}`)
-  }
   
   render() {
     let content = null;
     switch (this.state.buttonClicked) {
       case 'gigs':
-        content = <MusicGigs shows={this.props.shows} onEdit={this.handleGigEdit} onDelete={this.handleGigDelete} />
+        content = <MusicGigs shows={this.props.shows} onDelete={this.handleGigDelete} />
         break;
       case 'discography':
         content = <MusicDiscography />

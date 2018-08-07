@@ -24,8 +24,8 @@ const navigationItems = (props) => (
         <NavigationItem link="/music">MUSIC</NavigationItem> 
         <NavigationItem link="/booking">BOOKING</NavigationItem> 
         <NavigationItem link="/blog">BLOG</NavigationItem> 
-        <NavigationItem link="/newpost">NEW BLOG POST</NavigationItem> 
-        <NavigationItem link="/addshow">ADD SHOW</NavigationItem> 
+        <NavigationItem link="/blog/newpost">NEW BLOG POST</NavigationItem> 
+        <NavigationItem link="/music/addshow">ADD SHOW</NavigationItem> 
     </ul>
 )
 

@@ -14,6 +14,7 @@ import AddShow from './components/Music/AddShow/AddShow';
 import Blog from './components/Blog/Blog';
 import NewPost from './components/Blog/NewPost/NewPost'
 import EditPost from './components/Blog/EditPost/EditPost';
+import EditShow from './components/Music/EditShow/EditShow';
 //! Actions
 import * as actions from './store/actions/index';
 
@@ -37,10 +38,11 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={asyncAuth}/>
         <Route path="/coding" component={Coding}/>
+        <Route path="/music/addshow" component={AddShow}/>
+        <Route path={`/music/:id`} component={EditShow} />
         <Route path="/music" component={Music}/>
         <Route path="/booking" component={Booking}/>
-        <Route path="/addshow" component={AddShow}/>
-        <Route path="/newpost" component={NewPost}/>
+        <Route path="/blog/newpost" component={NewPost}/>
         <Route path={`/blog/:id`} component={EditPost}/>  
         <Route path="/blog" component={Blog}/>
         <Route path="/" exact component={Main}/>
