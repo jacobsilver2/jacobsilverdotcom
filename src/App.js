@@ -57,6 +57,7 @@ class App extends Component {
           <Route path="/logout" component={Logout}/>
           <Route path="/auth" component={asyncAuth}/>
           <Route path="/coding" component={Coding}/>
+          <Route path="/music/gigs" component={Gigs}/>
           <Route path="/music/addshow" component={AddShow}/>
           <Route path={`/music/:id`} component={EditShow} />
           <Route path="/music" component={Music}/>

@@ -6,6 +6,7 @@ import MusicGigs from './Gigs/musicGigs';
 import MusicDiscography from './Discography/musicDiscography';
 import MusicBiography from './Biography/musicBiography'
 import * as actions from '../../store/actions/index';
+import { Redirect } from 'react-router-dom';
 
 class Music extends Component {
   state = {buttonClicked: ''}
@@ -35,7 +36,7 @@ class Music extends Component {
     let content = null;
     switch (this.state.buttonClicked) {
       case 'gigs':
-        content = <MusicGigs shows={this.props.shows} onDelete={this.handleGigDelete} isAuth={this.props.token} />
+        content = <MusicGigs onDelete={this.handleGigDelete} isAuth={this.props.token} />
         break;
       case 'discography':
         content = <MusicDiscography />
