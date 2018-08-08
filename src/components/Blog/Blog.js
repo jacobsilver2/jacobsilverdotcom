@@ -13,14 +13,14 @@ class Blog extends Component {
   }
 
   handlePostDelete = (id) => {
-    this.props.onDeletePost(id);
+    this.props.onDeletePost(id, this.props.token);
     this.props.history.replace('/blog')
   }
 
   render() {
     let posts = <Spinner />
     if (!this.props.loading) {
-      posts = this.props.posts.map(post => <Post key={post.id} destroy={this.handlePostDelete} id={post.id} title={post.title} content={post.content}/>)
+      posts = this.props.posts.map(post => <Post key={post.id} isAuth={this.props.token} destroy={this.handlePostDelete} id={post.id} title={post.title} content={post.content}/>)
     }
 
     return (
@@ -34,14 +34,15 @@ class Blog extends Component {
 const mapStateToProps = state => {
   return {
     posts: state.blog.posts,
-    loading: state.blog.loading
+    loading: state.blog.loading,
+    token: state.auth.token
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     onFetchPosts: () => dispatch(actions.getPosts()),
-    onDeletePost: (id) => dispatch(actions.deletePost(id)),
+    onDeletePost: (id, token) => dispatch(actions.deletePost(id, token)),
   }
 }
 

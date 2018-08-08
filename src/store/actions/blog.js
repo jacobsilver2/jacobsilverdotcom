@@ -62,10 +62,10 @@ export const updatePost = (id, post) => {
 //! ────────────────────────────────────────────────────────────────────────────
 
 
-export const addPost = (postData) => {
+export const addPost = (postData, token) => {
   return dispatch => {
     dispatch(addPostStart());
-    axios.post('/blog.json', postData)
+    axios.post('/blog.json?auth=' + token, postData)
     .then(response => {
       dispatch(addPostSuccess(response.data.name, postData))
     })
@@ -95,9 +95,9 @@ export const getPosts = () => {
   }
 }
 
-export const deletePost = (postId) => {
+export const deletePost = (postId, token) => {
   return dispatch => {
-    axios.delete(`/blog/${postId}.json`)
+    axios.delete(`/blog/${postId}.json?auth=${token}`)
     .then(res => {
       dispatch(removePost(postId))
     })
@@ -107,9 +107,9 @@ export const deletePost = (postId) => {
   }
 }
 
-export const editPost = (id, postData) => {
+export const editPost = (id, postData, token) => {
   return dispatch => {
-    axios.patch(`/blog/${id}.json`, postData)
+    axios.patch(`/blog/${id}.json?auth=${token}`, postData)
     .then(res => {
       dispatch(updatePost(id, postData));
     })

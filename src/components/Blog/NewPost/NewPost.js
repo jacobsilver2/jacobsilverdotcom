@@ -56,7 +56,7 @@ class NewPost extends Component {
       title: this.state.controls.title.value,
       content: this.state.controls.content.value,
     }
-    this.props.onAddPost(post);
+    this.props.onAddPost(post, this.props.token);
     // this.setState({added: true})
     this.props.history.push('/blog');
   }
@@ -102,10 +102,16 @@ class NewPost extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    onAddPost: (postData) => dispatch(actions.addPost(postData))
+    token: state.auth.token
   }
 }
 
-export default connect(null, mapDispatchToProps)(NewPost);
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddPost: (postData, token) => dispatch(actions.addPost(postData, token))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewPost);

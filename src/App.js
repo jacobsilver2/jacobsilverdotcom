@@ -15,6 +15,8 @@ import Blog from './components/Blog/Blog';
 import NewPost from './components/Blog/NewPost/NewPost'
 import EditPost from './components/Blog/EditPost/EditPost';
 import EditShow from './components/Music/EditShow/EditShow';
+import Gigs from './components/Music/Gigs/musicGigs';
+
 //! Actions
 import * as actions from './store/actions/index';
 
@@ -38,19 +40,16 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={asyncAuth}/>
         <Route path="/coding" component={Coding}/>
-        <Route path="/music/addshow" component={AddShow}/>
-        <Route path={`/music/:id`} component={EditShow} />
+        <Route path="/music/gigs" component={Gigs}/>
         <Route path="/music" component={Music}/>
         <Route path="/booking" component={Booking}/>
-        <Route path="/blog/newpost" component={NewPost}/>
-        <Route path={`/blog/:id`} component={EditPost}/>  
         <Route path="/blog" component={Blog}/>
         <Route path="/" exact component={Main}/>
         {/* if none of these routes are found, ie if user tries to go to a route he/she doesn't have access to, they are redirected to the root page */}
         <Redirect to="/"/>
       </Switch>
     )
-
+    
     // all routes available to authenticated users
     if (this.props.isAuthenticated) {
       routes = (
@@ -58,7 +57,12 @@ class App extends Component {
           <Route path="/logout" component={Logout}/>
           <Route path="/auth" component={asyncAuth}/>
           <Route path="/coding" component={Coding}/>
+          <Route path="/music/addshow" component={AddShow}/>
+          <Route path={`/music/:id`} component={EditShow} />
           <Route path="/music" component={Music}/>
+          <Route path="/blog/newpost" component={NewPost}/>
+          <Route path={`/blog/:id`} component={EditPost}/>  
+          <Route path="/blog" component={Blog}/>
           <Route path="/booking" component={Booking}/>
           <Route path="/" exact component={Main}/>
           <Redirect to="/"/>

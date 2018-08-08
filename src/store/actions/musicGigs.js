@@ -61,10 +61,10 @@ export const updateShow = (id, show) => {
 //!   :::::: A S Y N C   A C T I O N S : :  :   :    :     :        :          :
 //! ────────────────────────────────────────────────────────────────────────────
 
-export const addShow = (showdata) => {
+export const addShow = (showdata, token) => {
   return dispatch => {
     dispatch(addShowStart());
-    axios.post('/shows.json', showdata)
+    axios.post('/shows.json?auth=' + token, showdata)
     .then(response => {
       dispatch(addShowSuccess(response.data.name, showdata))
     })
@@ -94,9 +94,9 @@ export const getShows = () => {
   }
 }
 
-export const deleteShow = (showId) => {
+export const deleteShow = (showId, token) => {
   return dispatch => {
-    axios.delete(`/shows/${showId}.json`)
+    axios.delete(`/shows/${showId}.json?auth=${token}`)
     .then(res => {
       dispatch(removeShow(showId))
     })
@@ -106,9 +106,9 @@ export const deleteShow = (showId) => {
   }
 }
 
-export const editShow = (id, showData) => {
+export const editShow = (id, showData, token) => {
   return dispatch => {
-    axios.patch(`/shows/${id}.json`, showData)
+    axios.patch(`/shows/${id}.json?auth=${token}`, showData)
     .then(res => {
       dispatch(updateShow(id, showData));
     })

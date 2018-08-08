@@ -50,14 +50,6 @@ class Auth extends Component {
     }
    }
 
-  //  componentDidMount() {
-  //   //  is the user trying to redirect to checkout, and not building a burger?
-  //   if (!this.props.buildingBurger && this.props.authRedirectPath !== '/') {
-  //     this.props.onSetAuthRedirectPath();
-  //   }  
-  //  }
-
-
    inputChangedHandler = (event, controlName) => {
     const updatedControls = updateObject(this.state.controls, {
       [controlName]: updateObject(this.state.controls[controlName], {

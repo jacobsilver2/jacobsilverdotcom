@@ -27,7 +27,7 @@ class Music extends Component {
   }  
 
   handleGigDelete = (id) => {
-    this.props.onDeleteShow(id)
+    this.props.onDeleteShow(id, this.props.token)
     this.props.history.replace('/music')
   }
   
@@ -35,7 +35,7 @@ class Music extends Component {
     let content = null;
     switch (this.state.buttonClicked) {
       case 'gigs':
-        content = <MusicGigs shows={this.props.shows} onDelete={this.handleGigDelete} />
+        content = <MusicGigs shows={this.props.shows} onDelete={this.handleGigDelete} isAuth={this.props.token} />
         break;
       case 'discography':
         content = <MusicDiscography />
@@ -60,14 +60,15 @@ class Music extends Component {
 const mapStateToProps = state => {
   return {
     shows: state.gigs.shows,
-    loading: state.gigs.loading
+    loading: state.gigs.loading,
+    token: state.auth.token
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     onFetchShows: () => dispatch(actions.getShows()),
-    onDeleteShow: (id) => dispatch(actions.deleteShow(id))
+    onDeleteShow: (id, token) => dispatch(actions.deleteShow(id, token))
   }
 }
 

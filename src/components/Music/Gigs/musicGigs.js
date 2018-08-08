@@ -1,9 +1,10 @@
 import React from 'react';
 import MusicGig from './MusicGig/musicGig'
 
-const musicGigs = ({shows, onDelete}) => {
+const musicGigs = ({shows, onDelete, isAuth}) => {
   const gigs = shows.map(show => {
     return <MusicGig 
+      isAuth={isAuth}
       onDelete={onDelete} 
       key={show.id} 
       act={show.act} 

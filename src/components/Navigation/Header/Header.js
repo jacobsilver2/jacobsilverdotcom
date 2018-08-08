@@ -7,7 +7,7 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 //sending props.isAuthenticated down to NavigationItems. Received from isAuth
 
 
-const toolbar = (props) => (
+const header = (props) => (
     <header className={classes.Header}>
         <DrawerToggle clicked={props.drawerToggleClicked}/>
         <nav className={classes.DesktopOnly}>
@@ -16,4 +16,4 @@ const toolbar = (props) => (
     </header>
 );
 
-export default toolbar;
+export default header;

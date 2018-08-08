@@ -113,7 +113,7 @@ class AddShow extends Component {
       city: this.state.controls.city.value,
       website: this.state.controls.website.value,
     }
-    this.props.onAddShow(show);
+    this.props.onAddShow(show, this.props.token);
     this.setState({added: true})
   }
 
@@ -159,10 +159,16 @@ class AddShow extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    onAddShow: (showData) => dispatch(actions.addShow(showData))
+    token: state.auth.token
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddShow);
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddShow: (showData, token) => dispatch(actions.addShow(showData, token))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddShow);

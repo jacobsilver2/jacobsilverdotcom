@@ -57,7 +57,7 @@ class EditPost extends Component {
       title: this.state.controls.title.value,
       content: this.state.controls.content.value,
     }
-    this.props.onEditPost(this.props.post.id, post)
+    this.props.onEditPost(this.props.post.id, post, this.props.token)
     this.props.history.push('/blog');
   }
 
@@ -103,12 +103,13 @@ class EditPost extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    post: state.blog.posts.find(post => post.id === ownProps.match.params.id)
+    post: state.blog.posts.find(post => post.id === ownProps.match.params.id),
+    token: state.auth.token
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
-    onEditPost: (id, postData) => dispatch(actions.editPost(id, postData))
+    onEditPost: (id, postData, token) => dispatch(actions.editPost(id, postData, token))
   }
 }
 

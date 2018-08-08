@@ -5,7 +5,7 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import Aux from '../../../hoc/Aux/Aux'
 import classes from './SideDrawer.css'
 
-//sending isAuth down to NavigationItems.  Received from Layout.js
+//?sending isAuth down to NavigationItems.  Received from Layout.js
 
 const sideDrawer = (props) => {
 

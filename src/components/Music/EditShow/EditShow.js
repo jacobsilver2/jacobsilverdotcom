@@ -111,7 +111,7 @@ class EditShow extends Component {
       city: this.state.controls.city.value,
       website: this.state.controls.website.value,
     }
-    this.props.onEditShow(this.props.show.id, show);
+    this.props.onEditShow(this.props.show.id, show, this.props.token);
     this.props.history.push('/music')
   }
 
@@ -154,13 +154,14 @@ class EditShow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    show: state.gigs.shows.find(show => show.id === ownProps.match.params.id)
+    show: state.gigs.shows.find(show => show.id === ownProps.match.params.id),
+    token: state.auth.token
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onEditShow: (id, showData) => dispatch(actions.editShow(id, showData))
+    onEditShow: (id, showData, token) => dispatch(actions.editShow(id, showData, token)),
   }
 }
 
