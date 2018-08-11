@@ -16,9 +16,10 @@ import petesReducer from './store/reducers/petes';
 import pineboxReducer from './store/reducers/pine';
 import musicGigsReducer from './store/reducers/musicGigs';
 import blogReducer from './store/reducers/blog';
+import youTubeReducer from './store/reducers/youtube';
 
 //? Combine Reducers
-const rootReducer = combineReducers({auth: authReducer, petes: petesReducer, pinebox: pineboxReducer, gigs: musicGigsReducer, blog: blogReducer});
+const rootReducer = combineReducers({auth: authReducer, petes: petesReducer, pinebox: pineboxReducer, gigs: musicGigsReducer, blog: blogReducer, youtube: youTubeReducer});
 
 //? Setup Redux Devtools
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;

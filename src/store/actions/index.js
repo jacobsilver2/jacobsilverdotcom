@@ -26,3 +26,7 @@ export {
   deletePost,
   editPost
 } from './blog'
+
+export {
+  getPlaylist
+} from './youtube'
