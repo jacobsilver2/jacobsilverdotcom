@@ -18,7 +18,7 @@ class Videos extends Component {
       }
     };
     
-    const theVids = this.props.videos.map((video, i) => {
+    const theVids = this.props.videos.map((video) => {
      return <YouTube 
       key={video.id}
       videoId={video.snippet.resourceId.videoId}
