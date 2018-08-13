@@ -12,9 +12,9 @@ class EditPost extends Component {
         elementType: 'input',
         elementConfig: {
           type: 'text',
-          placeholder: 'Title'
+          placeholder: 'title'
         },
-      value: '',
+      value: this.props.post.title,
       validation: {
         required: 'true',
       },
@@ -25,9 +25,9 @@ class EditPost extends Component {
         elementType: 'textarea',
         elementConfig: {
           type: 'text',
-          placeholder: 'Content'
+          placeholder: 'content'
         },
-      value: '',
+      value: this.props.post.content,
       validation: {
         required: 'true',
       },
@@ -37,6 +37,7 @@ class EditPost extends Component {
     },
     added: false
   }
+
 
 
 
