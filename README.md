@@ -5,7 +5,7 @@ This is a work in progress.  Currently, most of the code is complete, but there 
 Please go to https://jacobsilverdotcom.firebaseapp.com/ to see the website in its current state.
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/jacobsilver/EventBrite-PetesCandyStore-WeeklyEmail
+Bug reports and pull requests are welcome on GitHub at https://github.com/jacobsilver/jacobsilverdotcom
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
