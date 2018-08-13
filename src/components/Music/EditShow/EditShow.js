@@ -14,7 +14,7 @@ class EditShow extends Component {
           type: 'text',
           placeholder: 'ACT NAME'
         },
-      value: '',
+      value: this.props.show.act,
       validation: {
         required: 'true',
       },
@@ -27,7 +27,7 @@ class EditShow extends Component {
           type: 'date',
           placeholder: 'DATE'
         },
-      value: '',
+      value: this.props.show.date,
       validation: {
         required: true,
       },
@@ -40,7 +40,7 @@ class EditShow extends Component {
           type: 'time',
           placeholder: 'TIME'
         },
-      value: '',
+      value: this.props.show.time,
       validation: {
         required: true,
       },
@@ -53,7 +53,7 @@ class EditShow extends Component {
           type: 'text',
           placeholder: 'VENUE'
         },
-      value: '',
+      value: this.props.show.venue,
       validation: {
         required: true,
       },
@@ -66,7 +66,7 @@ class EditShow extends Component {
           type: 'text',
           placeholder: 'CITY'
         },
-      value: '',
+      value: this.props.show.city,
       validation: {
         required: true,
       },
@@ -79,7 +79,7 @@ class EditShow extends Component {
           type: 'text',
           placeholder: 'website'
         },
-      value: '',
+      value: this.props.show.website,
       validation: {
         required: true,
       },
