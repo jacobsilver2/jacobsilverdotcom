@@ -44,12 +44,8 @@ class App extends Component {
         <Route path="/music/gigs" component={Gigs}/>
         <Route path="/music" component={Music}/>
         <Route path="/booking" component={Booking}/>
-<<<<<<< HEAD
-        <Route path="/oldBlog" component={Blog}/>
-=======
         <Route path="/blog" component={Blog}/>
         <Route path="/google" component={Google}/>
->>>>>>> 6123542a37a4c82f91b42b02d7212126ed5fdc44
         <Route path="/" exact component={Main}/>
         {/* if none of these routes are found, ie if user tries to go to a route he/she doesn't have access to, they are redirected to the root page */}
         <Redirect to="/"/>
