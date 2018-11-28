@@ -17,6 +17,7 @@ const navigationItems = (props) => (
         <NavigationItem link="/music">MUSIC</NavigationItem> 
         <NavigationItem link="/booking">BOOKING</NavigationItem> 
         <NavigationItem link="/blog">BLOG</NavigationItem>       
+        <NavigationItem link="/google">JOB TRACKER</NavigationItem>       
 
         {/* only show the add show link if User is authenticated */}
         { props.isAuthenticated 
